@@ -98,9 +98,10 @@
 
 <b>TABLE 6. prescription_record</b> : 처방전 테이블  
 
-| patientID    | hosID        | drugID       | doctorID     | prescription_amount | day      | state | visit_date |
-|--------------|--------------|--------------|--------------|---------------------|----------|-------|------------|
-| 환자 고유 ID | 병원 고유 ID | 약물 고유 ID | 의사 고유 ID | 처방량              | 처방일수 | 상태  | 처방 날짜  |  
+|   patientID  |     hosID    |    drugID    |   doctorID   | prescription_amount |    day   | state | visit_date |
+|:------------:|:------------:|:------------:|:------------:|:-------------------:|:--------:|:-----:|:----------:|
+| 환자 고유 ID | 병원 고유 ID | 약물 고유 ID | 의사 고유 ID |        처방량       | 처방일수 |  상태 |  처방 날짜 |  
+
 
 <br>  
 
