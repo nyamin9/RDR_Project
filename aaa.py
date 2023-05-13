@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import os
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -14,8 +13,7 @@ plt.rcParams['font.family'] = 'Malgun Gothic'
 mpl.rcParams['axes.unicode_minus'] = False
 
 
-os.chdir("C:\\Users\\yamingu\\Desktop")
-prescription = pd.read_csv('real_prescription.csv')
+prescription = pd.read_csv('C:\\Users\\yamingu\\Desktop\\real_prescription.csv')
 
 prescription.patientID = prescription.patientID.astype('str')
 prescription.hosID = prescription.hosID.astype('str')
