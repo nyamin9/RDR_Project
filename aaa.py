@@ -13,7 +13,7 @@ plt.rcParams['font.family'] = 'Malgun Gothic'
 mpl.rcParams['axes.unicode_minus'] = False
 
 
-prescription = pd.read_csv('C:\\Users\\yamingu\\Desktop\\real_prescription.csv')
+prescription = pd.read_csv('real_prescription.csv')
 
 prescription.patientID = prescription.patientID.astype('str')
 prescription.hosID = prescription.hosID.astype('str')
