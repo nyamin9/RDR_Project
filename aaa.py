@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 ## 한글폰트 사용 시 그래프에서 마이너스 부호가 깨지지 않도록 해줌
-plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['font.family'] = 'D2Coding'
 mpl.rcParams['axes.unicode_minus'] = False
 
 
