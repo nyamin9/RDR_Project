@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 
 
 ## 한글폰트 사용 시 그래프에서 마이너스 부호가 깨지지 않도록 해줌
+
 plt.rcParams['font.family'] = 'Malgun Gothic'
 mpl.rcParams['axes.unicode_minus'] = False
 
@@ -63,9 +64,12 @@ plt.rc('figure', titlesize=2) # figure title 폰트 크기
 fig = plt.figure(figsize = (15, 5))
 
 fig.add_subplot(1,2,1)
-plt.title('귀하의 처방량 추세')
-plt.ylabel('처방량(mg)')
-plt.xlabel('처방 날짜')
+#plt.title('귀하의 처방량 추세')
+plt.title("Your prescription volume trend")
+#plt.ylabel('처방량(mg)')
+plt.ylabel("prescription volume (mg)")
+#plt.xlabel('처방 날짜')
+plt.xlabel('date')
 plt.plot(pat.prescription_amount, marker = 'o', mec = 'tomato', mfc = 'tomato', color = 'cornflowerblue')
 plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
 plt.gca().spines['top'].set_visible(False) #위 테두리 제거
