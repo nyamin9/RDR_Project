@@ -188,14 +188,14 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from matplotlib import font_manager, rc
-font_name = font_manager.FontProperties(fname='malgun668.ttf').get_name()
+font_name = font_manager.FontProperties(fname='NANUMGOTHIC-BOLD.TTF').get_name()
 rc('font', family=font_name)
 
 import math
 
 ## 한글폰트 사용 시 그래프에서 마이너스 부호가 깨지지 않도록 해줌
-plt.rcParams['font.family'] = 'Malgun Gothic'
-mpl.rcParams['axes.unicode_minus'] = False
+## plt.rcParams['font.family'] = 'Malgun Gothic'
+## mpl.rcParams['axes.unicode_minus'] = False
 
 plt.rc('font', size=15)        # 기본 폰트 크기
 plt.rc('axes', labelsize=14)   # x,y축 label 폰트 크기
