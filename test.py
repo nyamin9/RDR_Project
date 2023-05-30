@@ -83,7 +83,7 @@ def main():
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
             
             cursor.execute(query, record)
-            #connection.commit()
+            connection.commit()
             
             
             #ID_RNN = pd.DataFrame(cursor.fetchall())
@@ -131,10 +131,7 @@ def main():
                 #st.write(row)
                 prescription_list.append(row)
             
-            
-            #ID_RNN = pd.DataFrame(cursor.fetchall())
-            #ID_RNN = ID_RNN.rename(columns = {0 : 'patientID', 1 : 'pRNN', 2 : 'age'})
-            #ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
+           
             
     except Error as e:
         st.write("ERROR!!", e)
@@ -156,6 +153,10 @@ prescription.drugID = prescription.drugID.astype('str')
 prescription.doctorID = prescription.doctorID.astype('str')
 
 prescription = prescription.sort_values(by = 'visit_date')
+
+################################################################################################################
+
+# 데이터 전처리
 
 import math
 
@@ -182,6 +183,10 @@ def age_func(row):
     return row
 
 prescription = prescription.apply(age_func, axis = 1)
+
+################################################################################################################
+
+## 시각화
 
 import numpy as np
 import matplotlib as mpl
@@ -373,44 +378,6 @@ plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
 plt.gca().spines['top'].set_visible(False) #위 테두리 제거
 #plt.gca().spines['left'].set_visible(False) #왼쪽 테두리 제거
 plt.show()
-
-############################################################################################################################################################################
-
-# 히스토그램
-#fig.add_subplot(1,2,2)
-#a = prescription.copy()
-#a.prescription_amount = a.prescription_amount.astype('str')
-
-#res = a.groupby('prescription_amount').agg({'patientID' : 'count'})
-#res = res.reset_index()
-#res.prescription_amount = res.prescription_amount.astype('int64')
-#res = res.sort_values('prescription_amount')
-
-
-## 해당 환자의 가장 마지막 처방량 -> 인사이트가 별로 없음
-## 삭제할지 말지 결정하기!!
-#last = pat.iloc[-1]['prescription_amount']
-#your_last = res[res.prescription_amount==last]
-#plt.title('처방량 별 인원 분포')
-#plt.xlabel('처방량')
-#plt.ylabel('인원')
-
-#plt.bar(res.prescription_amount, res.patientID, color = 'cornflowerblue')
-#plt.bar(your_last['prescription_amount'], your_last['patientID'], color = 'tomato')
-#plt.bar(last, res['prescription_amount'] == last, color = 'r')
-#plt.ylim([res.patientID.min()-res.patientID.std(), res.patientID.max()+res.patientID.std()])
-#plt.annotate("annotate - xycoords('figure points')", xy=(2, 100), xycoords='figure points' )
-#plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
-#plt.gca().spines['top'].set_visible(False) #위 테두리 제거
-#plt.gca().spines['left'].set_visible(False) #왼쪽 테두리 제거
-#plt.legend()
-
-#plt.subplots_adjust(left=0.125, bottom=0.1, right=0.9, top=0.9, wspace=0.25, hspace=0.2)
-#plt.show()
-
-## prescription_record에 state 추가 시 차트 추가할 것
-## state 별 평균 약물 복용량 & 현재 당신의 state와 복용량
-## 귀하의 증상 추세
 
 st.pyplot(fig)
 
