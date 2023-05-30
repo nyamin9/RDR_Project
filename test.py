@@ -187,6 +187,10 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
+from matplotlib import font_manager, rc
+font_name = font_manager.FontProperties(fname='malgun668.ttf').get_name()
+rc('font', family=font_name)
+
 import math
 
 ## 한글폰트 사용 시 그래프에서 마이너스 부호가 깨지지 않도록 해줌
