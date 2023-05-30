@@ -41,7 +41,7 @@ def main():
             #ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
             
     except Error as e:
-        print("ERROR!!", e)
+        st.write("ERROR!!", e)
         
         
     finally:
@@ -91,7 +91,7 @@ def main():
             #ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
             
     except Error as e:
-        print("ERROR!!", e)
+        st.write("ERROR!!", e)
         
         
     finally:
@@ -137,7 +137,7 @@ def main():
             #ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
             
     except Error as e:
-        print("ERROR!!", e)
+        st.write("ERROR!!", e)
         
         
     finally:
