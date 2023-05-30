@@ -234,7 +234,7 @@ st.write('')
 ## 인덱스 date로 바꿔서 plot할 것
 # plt.subplot(1,1,2)
 
-fig = plt.figure(figsize = (24, 5))
+fig = plt.figure(figsize = (30, 7))
 fig.add_subplot(1,3,1)
 
 x = ['전체 환자 평균', '귀하 평균']
@@ -299,7 +299,7 @@ st.write('')
 
 ###########################################################################################################################################################################
 
-fig = plt.figure(figsize = (24, 5))
+fig = plt.figure(figsize = (30, 7))
 #fig.add_subplot(1,2,1)
 plt.title(f'귀하의 {drug} 처방량 추세\n\n')
 plt.ylabel('처방량(mg)\n')
