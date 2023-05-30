@@ -260,8 +260,8 @@ elif pat.iloc[-1].drugID == '11':
     disease = "불안장애"     
         
 all_mean = round(np.mean(drug_prescription.prescription_amount), 2)
-ss = np.std(pat.prescription_amount)
-your_mean = np.mean(pat.prescription_amount)
+ss = round(np.std(pat.prescription_amount), 2)
+your_mean = round(np.mean(pat.prescription_amount), 2)
 
 age_mean = round(np.mean(same_age.prescription_amount), 2)
 gender_mean = round(np.mean(same_gender.prescription_amount), 2)
