@@ -193,7 +193,9 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 @st.cache_data
-font_manager._load_fontmanager(try_read_cache=False)
+
+import matplotlib 
+matplotlib.font_manager._rebuild()
 
 from matplotlib import font_manager, rc
 font_name = font_manager.FontProperties(fname='NANUMGOTHIC-BOLD.TTF').get_name()
