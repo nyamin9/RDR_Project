@@ -204,7 +204,7 @@ st.write('')
 st.write('')
 st.write('')
 
-num = st.text_input('환자 ID를 입력하세요 : ')
+num = st.text_input('환자의 ID를 입력하세요 : ')
 
 pat = prescription.loc[prescription['patientID'] == num]
 drug_prescription = prescription.loc[prescription.drugID == pat.iloc[-1].drugID]
