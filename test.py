@@ -249,7 +249,6 @@ plt.text(1, your_mean/2, your_mean, verticalalignment ='top', horizontalalignmen
 #plt.axhline(y=last,linewidth=1, color='k')
 plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
 plt.gca().spines['top'].set_visible(False) #위 테두리 제거
-st.pyplot(fig)
 
 ###########################################################################################################################################################################
 
@@ -269,7 +268,6 @@ plt.text(2, your_mean/2, your_mean, verticalalignment ='top', horizontalalignmen
 #plt.axhline(x=,linewidth=1, color='k')
 plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
 plt.gca().spines['top'].set_visible(False) #위 테두리 제거
-st.pyplot(fig)
 
 ###########################################################################################################################################################################
 
