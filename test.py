@@ -23,7 +23,7 @@ def main():
             results = cursor.fetchall()
             
             for row in results:
-                st.write(row)
+                #st.write(row)
                 ID_RNN_list.append(row)
             
             
@@ -68,7 +68,7 @@ def main():
             results = cursor.fetchall()
             
             for row in results:
-                st.write(row)
+                #st.write(row)
                 prescription_list.append(row)
             
             
