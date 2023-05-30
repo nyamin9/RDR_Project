@@ -83,7 +83,7 @@ def main():
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
             
             cursor.execute(query, record)
-            connection.commit()
+            #connection.commit()
             
             
             #ID_RNN = pd.DataFrame(cursor.fetchall())
@@ -191,6 +191,9 @@ prescription = prescription.apply(age_func, axis = 1)
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+
+@st.cache_data
+font_manager._load_fontmanager(try_read_cache=False)
 
 from matplotlib import font_manager, rc
 font_name = font_manager.FontProperties(fname='NANUMGOTHIC-BOLD.TTF').get_name()
