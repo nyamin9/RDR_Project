@@ -5,13 +5,19 @@ import pandas as pd
 
 ID_RNN_list = []
 
+user = st.text_input('ID를 입력하세요 : ')
+password = st.text_input('패스워드를 입력하세요')
+
+st.write('')
+st.write('')
+
 def main():
     try:
         connection = mysql.connector.connect(
             host = '115.137.160.190',
             database = 'drugdb',
-            user = 'MinguKang',
-            password = 'ASdfseol779$',
+            user = user,
+            password = password,
             port = 3306
         )
         
