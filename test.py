@@ -140,9 +140,10 @@ plt.rc('ytick', labelsize=13)  # y축 눈금 폰트 크기
 plt.rc('legend', fontsize=20)  # 범례 폰트 크기
 plt.rc('figure', titlesize=2) # figure title 폰트 크기
 
-print()
-print()
-print()
+st.write('')
+st.write('')
+st.write('')
+
 num = st.text_input('환자 ID를 입력하세요 : ')
 
 pat = prescription.loc[prescription['patientID'] == num]
@@ -206,14 +207,14 @@ age_mean = round(np.mean(same_age.prescription_amount), 2)
 gender_mean = round(np.mean(same_gender.prescription_amount), 2)
 
 
-st.write()
-st.write()
+st.write('')
+st.write('')
 
 st.write("환자 전체의", drug, "평균 복용량은", all_mean, "(mg) 입니다.")
-st.write()
+st.write('')
 
 st.write("귀하의", drug, "평균 복용량은", your_mean, "(mg) 입니다.")
-st.write()
+st.write('')
 
 if your_mean > all_mean:
     st.write("귀하는 평균 복용량보다", round(your_mean / all_mean * 100 - 100, 2), "(%) 많이 복용하고 있습니다.")
@@ -223,9 +224,9 @@ else:
     st.write("귀하는 적정 수준 복용하고 있습니다.")
     
     
-st.write()    
-st.write()
-st.write()
+st.write('')    
+st.write('')
+st.write('')
 
 
 # 라인차트
@@ -292,9 +293,9 @@ st.pyplot(fig)
 
 ###########################################################################################################################################################################
 
-st.write()
-st.write()
-st.write()
+st.write('')
+st.write('')
+st.write('')
 
 ###########################################################################################################################################################################
 
@@ -349,6 +350,6 @@ plt.show()
 
 st.pyplot(fig)
 
-st.write()    
-st.write()
-st.write()
+st.write('')    
+st.write('')
+st.write('')
