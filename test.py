@@ -193,7 +193,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-mpl.font_manager._rebuild()
+mpl.font_manager.rebuild()
 
 from matplotlib import font_manager, rc
 font_manage._load_fontmanager(try_read_cache=False)
