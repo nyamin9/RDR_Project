@@ -79,7 +79,7 @@ def main():
         
         if connection.is_connected():
             cursor = connection.cursor(dictionary = True)
-            query = """ insert into prescription_record(patientID, hosID, drugID, doctorID, prescription_amount); """
+            query = """ insert into prescription_record(patientID, hosID, drugID, doctorID, prescription_amount) values (%s, %s, %s, %s, %s); """
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
             
             cursor.execute(query, record)
