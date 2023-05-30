@@ -126,7 +126,6 @@ prescription = prescription.apply(age_func, axis = 1)
 import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-%matplotlib inline
 
 import math
 
