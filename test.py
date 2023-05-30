@@ -6,11 +6,14 @@ import pandas as pd
 ID_RNN_list = []
 
 user = st.text_input('ID를 입력하세요 : ')
-password = st.text_input('패스워드를 입력하세요')
+password = st.text_input('패스워드를 입력하세요 : ')
 
 st.write('')
 st.write('')
 
+#####################################################################################################################################################
+
+# 환자 개인 정보 테이블 불러오기
 def main():
     try:
         connection = mysql.connector.connect(
@@ -53,6 +56,57 @@ if __name__ == '__main__':
 ID_RNN = pd.DataFrame(ID_RNN_list)
 ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
 
+#####################################################################################################################################################
+
+# 환자 처방 정보 입력
+
+patientID = st.text_input('환자 ID를 입력하세요 : ')
+hosID = st.text_input('병원 ID를 입력하세요 : ')
+drugID = st.text_input('약물 ID를 입력하세요 : ')
+doctorID = st.text_input('의사 ID를 입력하세요 : ')
+prescription_amount = st.text_input('처방량을 입력하세요 : ')
+
+
+def main():
+    try:
+        connection = mysql.connector.connect(
+            host = '115.137.160.190',
+            database = 'drugdb',
+            user = user,
+            password = password,
+            port = 3306
+        )
+        
+        if connection.is_connected():
+            cursor = connection.cursor(dictionary = True)
+            query = """ insert into prescription_record(patientID, hosID, drugID, doctorID, prescription_amount); """
+            record = (patientID, hosID, drugID, doctorID, prescription_amount)
+            
+            cursor.execute(query, record)
+            connection.commit()
+            
+            
+            #ID_RNN = pd.DataFrame(cursor.fetchall())
+            #ID_RNN = ID_RNN.rename(columns = {0 : 'patientID', 1 : 'pRNN', 2 : 'age'})
+            #ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
+            
+    except Error as e:
+        print("ERROR!!", e)
+        
+        
+    finally:
+        cursor.close()
+        connection.close()
+        #print("CONNECTION ENDED")
+        
+        
+if __name__ == '__main__':
+    main()
+    
+    
+#####################################################################################################################################################
+
+# 환자 처방 데이터 가져오기
 
 prescription_list = []
 
@@ -61,8 +115,8 @@ def main():
         connection = mysql.connector.connect(
             host = '115.137.160.190',
             database = 'drugdb',
-            user = 'MinguKang',
-            password = 'ASdfseol779$',
+            user = user,
+            password = password,
             port = 3306
         )
         
