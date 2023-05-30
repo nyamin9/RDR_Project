@@ -189,7 +189,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib import font_manager, rc
 font_name = font_manager.FontProperties(fname='NANUMGOTHIC-BOLD.TTF').get_name()
-rc('font', family=font_name)
+plt.rc('font', family=font_name)
 
 import math
 
