@@ -83,7 +83,7 @@ def main():
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
             
             cursor.execute(query, record)
-            connection.commit()
+            #connection.commit()
             
             
             #ID_RNN = pd.DataFrame(cursor.fetchall())
@@ -96,6 +96,7 @@ def main():
         
     finally:
         cursor.close()
+        connection.commit()
         connection.close()
         #print("CONNECTION ENDED")
         
