@@ -152,7 +152,7 @@ prescription.patientID = prescription.patientID.astype('str')
 prescription.hosID = prescription.hosID.astype('str')
 prescription.drugID = prescription.drugID.astype('str')
 prescription.doctorID = prescription.doctorID.astype('str')
-prescription.visit_date = prescription.visit_date.astype('datetime')
+prescription.visit_date = pd.to_datetime(prescription.visit_date)
 prescription = prescription.sort_values(by = 'visit_date')
 
 ################################################################################################################
