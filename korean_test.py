@@ -391,7 +391,7 @@ def main():
   plt.title(f'귀하의 {drug} 처방량 추세\n\n')
   plt.ylabel('처방량(mg)\n')
   plt.xlabel('\n처방 날짜')
-  ax.plot(pat.visit_date, pat.prescription_amount, marker = 'o', mec = 'tomato', mfc = 'tomato', color = 'cornflowerblue')
+  plt.plot(pat.visit_date, pat.prescription_amount, marker = 'o', mec = 'tomato', mfc = 'tomato', color = 'cornflowerblue')
   #dateFmt = mdates.DateFormatter('%Y-%m-%d')
   #ax.xaxis.set_major_formatter(dateFmt)
   plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
