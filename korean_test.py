@@ -200,12 +200,12 @@ import math
 ## plt.rcParams['font.family'] = 'Malgun Gothic'
 ## mpl.rcParams['axes.unicode_minus'] = False
 
-plt.rc('font', size=18)        # 기본 폰트 크기
+plt.rc('font', size=20)        # 기본 폰트 크기
 plt.rc('axes', labelsize=16)   # x,y축 label 폰트 크기
 plt.rc('xtick', labelsize=14)  # x축 눈금 폰트 크기 
 plt.rc('ytick', labelsize=14)  # y축 눈금 폰트 크기
 plt.rc('legend', fontsize=20)  # 범례 폰트 크기
-plt.rc('figure', titlesize=2) # figure title 폰트 크기
+plt.rc('figure', titlesize=20) # figure title 폰트 크기
 
 st.write('')
 st.write('')
