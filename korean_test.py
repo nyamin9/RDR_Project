@@ -3,6 +3,9 @@ import mysql.connector
 from mysql.connector import Error
 import pandas as pd
 
+import warnings
+warnings.filterwarnings(action = 'ignore')
+
 ID_RNN_list = []
 
 user = st.text_input('ID를 입력하세요 : ')
@@ -384,7 +387,7 @@ def main():
 
 ###########################################################################################################################################################################
 
-  pat.visit_date = pd.to_datetime(pat.visit_date)
+  pat.visit_date = pat.visit_date.astype('str')
   
   fig = plt.figure(figsize = (30, 7))
   #fig.add_subplot(1,2,1)
