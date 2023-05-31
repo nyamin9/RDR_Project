@@ -386,7 +386,7 @@ def main():
 
 
 
-  fig, ax = plt.figure(figsize = (30, 7))
+  fig, ax = plt.subplots(figsize = (30, 7))
   #fig.add_subplot(1,2,1)
   plt.title(f'귀하의 {drug} 처방량 추세\n\n')
   plt.ylabel('처방량(mg)\n')
