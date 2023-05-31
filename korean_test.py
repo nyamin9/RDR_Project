@@ -395,6 +395,7 @@ def main():
   plt.ylabel('처방량(mg)\n')
   plt.xlabel('\n처방 날짜')
   plt.plot(pat.visit_date, pat.prescription_amount, marker = 'o', mec = 'tomato', mfc = 'tomato', color = 'cornflowerblue')
+  plt.xticks(rotation=45)
   #dateFmt = mdates.DateFormatter('%Y-%m-%d')
   #ax.xaxis.set_major_formatter(dateFmt)
   plt.gca().spines['right'].set_visible(False) #오른쪽 테두리 제거
