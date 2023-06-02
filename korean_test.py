@@ -99,7 +99,7 @@ def main():
         
     finally:
         cursor.close()
-        connection.commit()
+        #connection.commit()
         connection.close()
         #print("CONNECTION ENDED")
         
