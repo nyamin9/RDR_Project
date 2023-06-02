@@ -63,12 +63,11 @@ if user !='' and password !='':
 #####################################################################################################################################################
 
 # 환자 처방 정보 입력
-
-patientID = st.text_input('환자 ID를 입력하세요 : ')
-hosID = st.text_input('병원 ID를 입력하세요 : ')
-drugID = st.text_input('약물 ID를 입력하세요 : ')
-doctorID = st.text_input('의사 ID를 입력하세요 : ')
-prescription_amount = st.text_input('처방량을 입력하세요 : ')
+# patientID = st.text_input('환자 ID를 입력하세요 : ')
+# hosID = st.text_input('병원 ID를 입력하세요 : ')
+# drugID = st.text_input('약물 ID를 입력하세요 : ')
+# doctorID = st.text_input('의사 ID를 입력하세요 : ')
+# prescription_amount = st.text_input('처방량을 입력하세요 : ')
 
 
 def main():
@@ -82,6 +81,13 @@ def main():
         )
         
         if connection.is_connected():
+            
+            patientID = st.text_input('환자 ID를 입력하세요 : ')
+            hosID = st.text_input('병원 ID를 입력하세요 : ')
+            drugID = st.text_input('약물 ID를 입력하세요 : ')
+            doctorID = st.text_input('의사 ID를 입력하세요 : ')
+            prescription_amount = st.text_input('처방량을 입력하세요 : ')
+            
             cursor = connection.cursor(dictionary = True)
             query = """ insert into prescription_record(patientID, hosID, drugID, doctorID, prescription_amount) values (%s, %s, %s, %s, %s); """
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
@@ -104,9 +110,11 @@ def main():
         connection.close()
         #print("CONNECTION ENDED")
         
-        
-if __name__ == '__main__':
-    main()
+if prescription_amount != '':
+    #뒤에 시각화가 나타나기 위해 필요한 조건 앞에 모두 실행되어야 뒤에가 실행될 수 있다. 
+    check = 3
+    if __name__ == '__main__':
+        main()
     
     
 #####################################################################################################################################################
@@ -147,9 +155,9 @@ def main():
         connection.close()
         #print("CONNECTION ENDED")
         
-        
-if __name__ == '__main__':
-    main()
+if check == 3 :
+    if __name__ == '__main__':
+        main()
     
 prescription = pd.DataFrame(prescription_list)
 prescription.patientID = prescription.patientID.astype('str')
