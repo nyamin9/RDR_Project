@@ -53,11 +53,12 @@ def main():
         connection.close()
         #print("CONNECTION ENDED")
         
-        
-if __name__ == '__main__':
-    main()
+if user !='' and password !='':
+    if __name__ == '__main__':
+        main()
     
 ID_RNN = pd.DataFrame(ID_RNN_list)
+#patientID의 type 변경
 ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
 
 #####################################################################################################################################################
