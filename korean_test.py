@@ -17,6 +17,7 @@ st.write('')
 #####################################################################################################################################################
 
 # 환자 개인 정보 테이블 불러오기
+
 def main():
     try:
         connection = mysql.connector.connect(
@@ -86,7 +87,7 @@ def main():
             record = (patientID, hosID, drugID, doctorID, prescription_amount)
             
             cursor.execute(query, record)
-            #connection.commit()
+            connection.commit()
             
             
             #ID_RNN = pd.DataFrame(cursor.fetchall())
