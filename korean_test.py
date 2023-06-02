@@ -52,10 +52,11 @@ def main():
         cursor.close()
         connection.close()
         #print("CONNECTION ENDED")
-        
+check1 = False
 if user !='' and password !='':
     if __name__ == '__main__':
         main()
+    check1 = True
     ID_RNN = pd.DataFrame(ID_RNN_list)
     #patientID의 type 변경
     ID_RNN['patientID'] = ID_RNN['patientID'].astype('str')
@@ -63,13 +64,7 @@ if user !='' and password !='':
 #####################################################################################################################################################
 
 # 환자 처방 정보 입력
-# patientID = st.text_input('환자 ID를 입력하세요 : ')
-# hosID = st.text_input('병원 ID를 입력하세요 : ')
-# drugID = st.text_input('약물 ID를 입력하세요 : ')
-# doctorID = st.text_input('의사 ID를 입력하세요 : ')
-# prescription_amount = st.text_input('처방량을 입력하세요 : ')
-
-
+check2 = False
 def main():
     try:
         connection = mysql.connector.connect(
@@ -110,9 +105,9 @@ def main():
         connection.close()
         #print("CONNECTION ENDED")
         
-if prescription_amount != '':
-    #뒤에 시각화가 나타나기 위해 필요한 조건 앞에 모두 실행되어야 뒤에가 실행될 수 있다. 
-    check = 3
+if check1:
+    #뒤에 시각화가 나타나기 위해 필요한 조건 앞에 모두 실행되어야 뒤에가 실행될 수 있다. check1으로 확인
+    check2 = True 
     if __name__ == '__main__':
         main()
     
@@ -154,8 +149,8 @@ def main():
         cursor.close()
         connection.close()
         #print("CONNECTION ENDED")
-        
-if check == 3 :
+#처방 입력이 되어야 main함수 실행가능 check2로 
+if check2 == True :
     if __name__ == '__main__':
         main()
     
