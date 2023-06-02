@@ -18,7 +18,7 @@ st.write('')
 
 # 환자 개인 정보 테이블 불러오기
 
-def main1():
+def main():
     try:
         connection = mysql.connector.connect(
             host = '115.137.160.190',
@@ -56,8 +56,8 @@ def main1():
 check1 = False
 
 if user !='' and password !='':
-    if __name__ == '__main1__':
-        main1()
+    if __name__ == '__main__':
+        main()
     check1 = True
     ID_RNN = pd.DataFrame(ID_RNN_list)
     #patientID의 type 변경
@@ -67,7 +67,7 @@ if user !='' and password !='':
 
 # 환자 처방 정보 입력
 check2 = False
-def main2():
+def main():
     try:
         connection = mysql.connector.connect(
             host = '115.137.160.190',
@@ -110,8 +110,8 @@ def main2():
 if check1:
     #뒤에 시각화가 나타나기 위해 필요한 조건 앞에 모두 실행되어야 뒤에가 실행될 수 있다. check1으로 확인
     check2 = True 
-    if __name__ == '__main2__':
-        main2()
+    if __name__ == '__main__':
+        main()
     
     
 #####################################################################################################################################################
@@ -120,7 +120,7 @@ if check1:
 
 prescription_list = []
 
-def main3():
+def main():
     try:
         connection = mysql.connector.connect(
             host = '115.137.160.190',
@@ -154,8 +154,8 @@ def main3():
         
 #처방 입력이 되어야 main함수 실행가능 check2로 
 if check2 == True :
-    if __name__ == '__main3__':
-        main3()
+    if __name__ == '__main__':
+        main()
     
 prescription = pd.DataFrame(prescription_list)
 prescription.patientID = prescription.patientID.astype('str')
@@ -325,7 +325,7 @@ def fontRegistered():
 ## 인덱스 date로 바꿔서 plot할 것
 # plt.subplot(1,1,2)
 
-def main4():
+def main():
   fontRegistered()
   font_name = fm.FontProperties(fname='NANUMGOTHIC-BOLD.TTF').get_name()
   plt.rc('font', family=font_name)
@@ -415,5 +415,5 @@ def main4():
   st.write('')
   
   
-if __name__ == "__main4__":
-  main4()
+if __name__ == "__main__":
+  main()
