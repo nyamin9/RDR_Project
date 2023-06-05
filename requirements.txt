@@ -12,3 +12,5 @@ matplotlib==3.5.2
 imutils==0.5.4
 scikit-image==0.19.2
 mysql-connector-python
+pyserial
+serial
