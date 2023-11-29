@@ -294,9 +294,9 @@ st.write("귀하의", drug, "평균 복용량은", your_mean, "(mg) 입니다.")
 st.write('')
 
 if your_mean > all_mean:
-    st.write("귀하는 평균 복용량보다", round(your_mean / all_mean * 100 - 100, 2), "(%) 많이 복용하고 있습니다.")
+    st.write("귀하는 평균 복용량보다", all_mean - your_mean, "(mg) 많이 복용하고 있습니다.")
 elif your_mean < all_mean:
-    st.write("귀하는 평균 복용량보다", round(-(your_mean / all_mean * 100 - 100), 2), "(%) 적게 복용하고 있습니다.")
+    st.write("귀하는 평균 복용량보다", all_mean - your_mean, "(mg) 적게 복용하고 있습니다.")
 else:
     st.write("귀하는 적정 수준 복용하고 있습니다.")
     
